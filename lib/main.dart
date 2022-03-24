@@ -2,6 +2,7 @@ import 'package:danganhphu_61134177/widget/my_carousels.dart';
 import 'package:danganhphu_61134177/widget/my_counter.dart';
 import 'package:danganhphu_61134177/widget/my_image.dart';
 import 'package:danganhphu_61134177/widget/my_input.dart';
+import 'package:danganhphu_61134177/widget/my_slider.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
