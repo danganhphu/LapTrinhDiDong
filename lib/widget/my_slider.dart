@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 
 class MySlider extends StatefulWidget {
@@ -10,6 +11,8 @@ class MySlider extends StatefulWidget {
 }
 
 class _MySliderState extends State<MySlider> {
+  final controller = CarouselController();
+
   List <String> imagelist = [
     'asset/img/carousels/crip.jpg',
     'asset/img/carousels/clock420.jpg',
@@ -19,7 +22,7 @@ class _MySliderState extends State<MySlider> {
     'asset/img/carousels/go420.jpg'
   ];
   int current = 0;
-  void leftpicture(){
+  void goToPrevious(){
     setState(() {
       current--;
       if(current < 0) {
@@ -28,7 +31,7 @@ class _MySliderState extends State<MySlider> {
     });
   }
 
-  void rightpicture()
+  void goToNext()
   {
     setState(() {
       current++;
@@ -47,26 +50,41 @@ class _MySliderState extends State<MySlider> {
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Center(
-
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset(imagelist[current]),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    FloatingActionButton(onPressed: leftpicture,child: const Icon(Icons.arrow_left)),
-                    FloatingActionButton(onPressed: rightpicture,child: const Icon(Icons.arrow_right),),
-
-                  ],
-                ),
+              const Padding(
+                padding: EdgeInsets.all(15.0),
               ),
+              buildButton(),
             ],
           ),
         ),
       ),
     );
   }
+
+  Widget buildButton({bool check = false}) => Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 6.0),
+            primary: Colors.teal
+        ),
+        child: const Icon(Icons.arrow_back, size:32),
+        onPressed: goToPrevious
+      ),
+      check ? const Spacer() : const SizedBox(width: 30),
+      ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 6.0),
+              primary: Colors.teal
+          ),
+          child: const Icon(Icons.arrow_forward, size:32),
+          onPressed: goToNext
+      ),
+    ],
+  );
 }

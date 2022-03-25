@@ -1,5 +1,6 @@
 import 'package:danganhphu_61134177/widget/my_carousels.dart';
 import 'package:danganhphu_61134177/widget/my_counter.dart';
+import 'package:danganhphu_61134177/widget/my_gridview.dart';
 import 'package:danganhphu_61134177/widget/my_image.dart';
 import 'package:danganhphu_61134177/widget/my_input.dart';
 import 'package:danganhphu_61134177/widget/my_slider.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        home: CarouselDemo()
+        home: MyGird()
     );
   }
 }

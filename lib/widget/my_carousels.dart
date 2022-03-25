@@ -15,7 +15,7 @@ class _CarouselDemoState extends State<CarouselDemo> {
   final controller = CarouselController();
 
   int _current = 0;
-  final imgLists = [
+  List<String> imgLists = [
     'asset/img/carousels/crip.jpg',
     'asset/img/carousels/clock420.jpg',
     'asset/img/carousels/dc420_2.jpg',
@@ -117,8 +117,8 @@ class _CarouselDemoState extends State<CarouselDemo> {
 
   void animateSlide(int index) => controller.animateToPage(index);
 
-  void goToPrevious() => controller.previousPage(duration: const Duration(milliseconds:300), curve: Curves.ease);
+  void goToPrevious() => controller.previousPage(duration: const Duration(milliseconds:300), curve: Curves.easeIn);
 
-  void goToNext() => controller.nextPage(duration: const Duration(milliseconds:300), curve: Curves.ease);
+  void goToNext() => controller.nextPage(duration: const Duration(milliseconds:300), curve: Curves.easeIn);
 
 }
