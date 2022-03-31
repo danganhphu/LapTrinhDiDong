@@ -18,7 +18,7 @@ class _MyGirdState extends State<MyGird> {
       ),
       body: GridView.extent(
         maxCrossAxisExtent:150,
-        padding: EdgeInsets.all(5),
+        padding: const EdgeInsets.all(5),
         mainAxisSpacing: 5,
         crossAxisSpacing: 5,
         children: List.generate(100,
@@ -27,7 +27,7 @@ class _MyGirdState extends State<MyGird> {
                   border: Border.all(color: Colors.blue)
               ),
               child: Center(
-                child: Text("${index+1}", style:TextStyle(fontSize: 20),),
+                child: Text("${index+1}", style:const TextStyle(fontSize: 20),),
               ),
             )
         ),
