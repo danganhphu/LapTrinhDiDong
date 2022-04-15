@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:danganhphu_61134177/state/my_change_notifier.dart';
+import 'package:danganhphu_61134177/shared_preferences/change_notifier.dart';
 
 class MyCount extends StatelessWidget {
   const MyCount({Key? key}) : super(key: key);
@@ -24,7 +24,11 @@ class MyCount extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text("Số lần mày bấm vào button"),
-                  Text("${provider.value}", style: const TextStyle(fontSize: 20, color: Colors.yellow))
+            FutureBuilder(
+              future: provider.value,
+              builder: (context, snapshot) =>
+                  Text("${snapshot.data}", style: const TextStyle(fontSize: 20, color: Colors.yellow))
+            ),
           ],
         ),
       ),
