@@ -5,11 +5,13 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:danganhphu_61134177/main.dart';
-
+import 'package:http/http.dart' as http;
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
@@ -27,4 +29,17 @@ void main() {
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
   });
+
+
+  // test('test_rss', () async {
+  //   var url = Uri.parse('https://vnexpress.net/rss/tin-moi-nhat.rss');
+  //   var response = await http.get(url);
+  //
+  //   if (response.statusCode == 200) {
+  //     print(utf8.decode(response.bodyBytes));
+  //   }
+  //   else {
+  //     return null;
+  //   }
+  // });
 }

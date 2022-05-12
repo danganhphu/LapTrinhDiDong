@@ -5,6 +5,8 @@ import 'package:danganhphu_61134177/state/show_mathang_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'data_backend/json_serialization/rss/my_rss_vnexpress.dart';
+
 void main() => runApp(const MyApp());
 
 //test code
@@ -14,9 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyCount()
+      home: RSS_Page1()
     );
   }
-
 }
 

@@ -26,8 +26,11 @@ class MyCount extends StatelessWidget {
             const Text("Số lần mày bấm vào button"),
             FutureBuilder(
               future: provider.value,
-              builder: (context, snapshot) =>
-                  Text("${snapshot.data}", style: const TextStyle(fontSize: 20, color: Colors.yellow))
+              builder: (context, snapshot) {
+                return
+                  Text("${snapshot.data}", style: const TextStyle(fontSize: 20, color: Colors.pink));
+              }
+
             ),
           ],
         ),
