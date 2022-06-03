@@ -14,9 +14,6 @@ class _MyImgState extends State<MyImg> {
       appBar: AppBar(
         title: Text("My Image"),
       ),
-      drawer: Drawer(
-
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -26,11 +23,6 @@ class _MyImgState extends State<MyImg> {
               width: 300,
               child: Image.asset("asset/img/crip_blood.jpg"),
             ),
-            // Container(
-            //   height: 300,
-            //   width: 300,
-            //   child: Image.network("https://anh360.com/wp-content/uploads/2018/07/cach-de-chup-duoc-anh-dep-chi-bang-mot-chiec-may-anh-cu-05-440x295.jpg"),
-            // ),
             Row(
               children: const [
                 Icon(Icons.star, color: Colors.yellow),

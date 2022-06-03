@@ -44,8 +44,7 @@ class MyFormMatHang extends StatelessWidget {
                     loaiMH) => DropdownMenuItem<String>(
                   child: Text(loaiMH),
                   value: loaiMH,
-                ))
-                    .toList(),
+                )).toList(),
               ),
               TextFormField(
                 controller: txtSoLuong,
