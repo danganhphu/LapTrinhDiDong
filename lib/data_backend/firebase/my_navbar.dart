@@ -12,9 +12,9 @@ class NavBar extends StatelessWidget {
 
          crossAxisAlignment: CrossAxisAlignment.center,
          children: [
-           Padding(padding: EdgeInsets.all(15,)),
-           Text("My firebase app",style: TextStyle(fontSize: 15),),
-           SizedBox(width: 15,),
+           const Padding(padding: EdgeInsets.all(15,)),
+           const Text("My firebase app",style: TextStyle(fontSize: 15),),
+           const SizedBox(width: 15,),
            ElevatedButton(
              child: Row(
                mainAxisAlignment: MainAxisAlignment.center,
