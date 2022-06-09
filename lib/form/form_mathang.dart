@@ -44,8 +44,7 @@ class MyFormMatHang extends StatelessWidget {
                     loaiMH) => DropdownMenuItem<String>(
                   child: Text(loaiMH),
                   value: loaiMH,
-                ))
-                    .toList(),
+                )).toList(),
               ),
               TextFormField(
                 controller: txtSoLuong,
@@ -86,7 +85,7 @@ class MyFormMatHang extends StatelessWidget {
     }
 
   }
-//VALIDATE DUNG TRA VE NULL. SAI TRA VE CHUOI
+
   validateString(String? value) {
     return value == null || value.isEmpty ? "Bạn chưa nhâp dữ liệu" :null;
   }

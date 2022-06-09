@@ -3,21 +3,21 @@ import 'RSSItem.dart';
 import 'my_rss_page.dart';
 
 import 'package:flutter/material.dart';
-class RSS_Page1 extends StatefulWidget {
-  const RSS_Page1({Key? key}) : super(key: key);
+class MyRSSPage1 extends StatefulWidget {
+  const MyRSSPage1({Key? key}) : super(key: key);
 
   @override
-  State<RSS_Page1> createState() => _RSS_Page1State();
+  State<MyRSSPage1> createState() => _MyRSSPage1State();
 }
 
-class _RSS_Page1State extends State<RSS_Page1> {
+class _MyRSSPage1State extends State<MyRSSPage1> {
 
   late Future<List<RSSItem>?> rssitems;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("VNExpress"),
+        title: const Text("VNExpress"),
       ),
       body: RefreshIndicator(
         onRefresh: () async{
@@ -28,9 +28,9 @@ class _RSS_Page1State extends State<RSS_Page1> {
           future: rssitems,
           builder: (context,snapshot){
             if(snapshot.hasError){
-              print("Loi");
+              print("Lỗi");
               // print();
-              return Text("lỗi");
+              return const Text("lỗi");
             }
             return snapshot.hasData
                 ? Container(
@@ -57,11 +57,11 @@ class _RSS_Page1State extends State<RSS_Page1> {
                                 width:  120,
                                 child: _getImage(snapshot.data![index].imageUrl),
                               ),
-                              SizedBox(width: 10,),
+                              const SizedBox(width: 10,),
                               Expanded(
                                 child: Text(
                                   snapshot.data![index].title!,
-                                  style: TextStyle(fontSize: 16,fontWeight: FontWeight.w800),
+                                  style: const TextStyle(fontSize: 16,fontWeight: FontWeight.w800),
                                 ),
                               ),
                             ],
@@ -70,7 +70,7 @@ class _RSS_Page1State extends State<RSS_Page1> {
                         ),
                         Text(
                           snapshot.data![index].description!,
-                          style: TextStyle(fontSize: 14),
+                          style: const TextStyle(fontSize: 14),
                         )
                       ],
                     ),
@@ -81,7 +81,7 @@ class _RSS_Page1State extends State<RSS_Page1> {
 
               ),
             )
-                :Center(child: CircularProgressIndicator(),);
+                :Center(child: const CircularProgressIndicator(),);
           },
 
         ),
